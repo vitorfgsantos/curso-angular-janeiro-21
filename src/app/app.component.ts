@@ -26,4 +26,8 @@ export class AppComponent {
     return 'Vitor Farias';
   }
 
+  eventoRecebido(event: any) {
+    console.log('Recebi um evento no AppComponent', event);
+  }
+
 }

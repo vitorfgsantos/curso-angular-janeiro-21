@@ -1,0 +1,17 @@
+<!-- Property Bindings -->
+<img [src]="imageURL" [width]="tamanhoDaImagem">
+
+<button [disabled]="botaoHabilitado"> Botão </button>
+
+<p [attr.aria-label]="botaoHabilitado ?
+  getTextoAcessivel() : 'Outro texto acessível' ">
+  Um texto qualquer...
+</p>
+
+<input [value]="getTextoAcessivel()">
+
+<!-- Event Bindings -->
+
+<button (click)="clicouNoBotao($event)"
+  (mouseenter)="passouMousePorCima($event)"
+> Clique aqui </button>
