@@ -16,6 +16,9 @@ export class ExercicioDataBindingComponent implements OnInit {
 
   valorDoContador = 10;
 
+  meuTexto = 'Meu texto inicial';
+  valorNoDropdown = '';
+
   constructor() {
     // setInterval(() => {
     //   this.enviarInformacao.emit();
@@ -44,6 +47,11 @@ export class ExercicioDataBindingComponent implements OnInit {
 
   quandoMudarOValor(valor: number) {
     console.log(valor);
+  }
+
+  digitou(event: any) {
+    console.log(event)
+    this.meuTexto = this.meuTexto + event.key;
   }
 
 }

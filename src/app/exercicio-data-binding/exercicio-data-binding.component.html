@@ -24,3 +24,19 @@
 </app-exercicio-contador>
 
 <h2> Valor da variável dentro do ExercicioDatabing: {{ valorDoContador }} </h2>
+
+
+<!-- NgModel -->
+
+<input type="text" [(ngModel)]="meuTexto">
+
+<h2> Valor do meu texto: {{ meuTexto }} </h2>
+
+<select [(ngModel)]="valorNoDropdown">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+<h2> Valor no Dropdown: {{ valorNoDropdown }} </h2>
