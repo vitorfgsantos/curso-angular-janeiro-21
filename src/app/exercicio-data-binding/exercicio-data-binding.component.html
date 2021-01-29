@@ -15,3 +15,12 @@
 <button (click)="clicouNoBotao($event)"
   (mouseenter)="passouMousePorCima($event)"
 > Clique aqui </button>
+
+
+<!-- Exercício Contador -->
+
+<app-exercicio-contador
+  [valor]="valorDoContador" (valorMudou)="novoValorNoContador($event)">
+</app-exercicio-contador>
+
+<h2> Valor da variável dentro do ExercicioDatabing: {{ valorDoContador }} </h2>

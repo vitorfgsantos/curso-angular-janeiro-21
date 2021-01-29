@@ -14,6 +14,8 @@ export class ExercicioDataBindingComponent implements OnInit {
 
   botaoHabilitado = true;
 
+  valorDoContador = 10;
+
   constructor() {
     // setInterval(() => {
     //   this.enviarInformacao.emit();
@@ -38,6 +40,10 @@ export class ExercicioDataBindingComponent implements OnInit {
 
   passouMousePorCima(event: any) {
     console.log('Passou o mouse', event.value);
+  }
+
+  novoValorNoContador(valor: number) {
+    this.valorDoContador = valor;
   }
 
 }
