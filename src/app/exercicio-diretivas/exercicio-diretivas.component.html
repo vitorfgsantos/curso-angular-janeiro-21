@@ -1,0 +1,31 @@
+<!-- ngIF -->
+<button (click)="trocarValor()"> Trocar valor </button>
+
+<div *ngIf="deveExibir; then meuOutroBloco else meuOutroBloco3">
+  Olá, estou dentro do ngIf.
+</div>
+
+<div *ngIf="soma(2, 3) > 2">
+  Olá, estou dentro do ngIf. 
+</div>
+
+<ng-template #meuOutroBloco>
+  Vou ser exibido quando o deveExibir for FALSE.
+</ng-template>
+
+<ng-template #meuOutroBloco3>
+  Vou ser exibido quando o deveExibir for FALSE.
+</ng-template>
+
+<ng-template [ngIf]="deveExibir">
+  <p>Conteudo dentro do ngIf sem asterisco</p>
+</ng-template>
+
+
+<!-- ngFor -->
+<ul>
+  <li *ngFor="let fruta of frutas; index as i; let odd = odd; last as ultimo">
+    {{ i + 1 }} - {{ fruta }} - {{ odd ? 'ESTE É PAR!' : 'É IMPAR'}} | 
+    {{ ultimo ? 'ESTE É O ÚLTIMO' : '' }}
+  </li>
+</ul>
