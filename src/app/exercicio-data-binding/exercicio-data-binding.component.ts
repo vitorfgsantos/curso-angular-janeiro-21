@@ -42,8 +42,8 @@ export class ExercicioDataBindingComponent implements OnInit {
     console.log('Passou o mouse', event.value);
   }
 
-  novoValorNoContador(valor: number) {
-    this.valorDoContador = valor;
+  quandoMudarOValor(valor: number) {
+    console.log(valor);
   }
 
 }
