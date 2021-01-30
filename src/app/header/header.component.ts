@@ -1,26 +1,20 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, OnChanges, OnDestroy {
+export class HeaderComponent {
 
-  @Input() titulo: string = '';
+  constructor(
+    private router: Router
+  ) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log('HEADER: ngOnInit')
-  }
-
-  ngOnChanges() {
-    console.log('HEADER: ngOnChanges')
-  }
-
-  ngOnDestroy() {
-    console.log('HEADER: ngOnDestroy');
+  logout() {
+    // deslogar o meu usuário
+    this.router.navigate(['login']);
   }
 
 }
