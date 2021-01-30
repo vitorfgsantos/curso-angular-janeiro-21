@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { LoginResponse } from './login.interfaces';
 import { LoginService } from './login.service';
 
 @Component({
@@ -59,7 +60,7 @@ export class LoginComponent {
       );
   }
 
-  onSuccessLogin(response: any) {
+  onSuccessLogin(response: LoginResponse) {
     console.log('Sucesso', response);
   }
 
