@@ -53,6 +53,18 @@ export class LoginComponent {
       senha: this.senha
     };
     this.loginService.logar(credenciais)
+      .subscribe(
+        response => this.onSuccessLogin(response),
+        error => this.onErrorLogin(error)
+      );
+  }
+
+  onSuccessLogin(response: any) {
+    console.log('Sucesso', response);
+  }
+
+  onErrorLogin(error: any) {
+    console.log('Erro', error);
   }
 
 }

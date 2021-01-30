@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { LoginCredenciais } from './login.interfaces';
@@ -7,9 +8,11 @@ import { LoginCredenciais } from './login.interfaces';
 })
 export class LoginService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   logar(credenciais: LoginCredenciais) {
-    console.log('LoginService', credenciais);
+    return this.http.post('https://accenture-java-desafio.herokuapp.com/login', credenciais);
   }
 }
