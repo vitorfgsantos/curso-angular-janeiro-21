@@ -1,28 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AreaLogadaComponent } from './area-logada/area-logada.component';
+import { HomeComponent } from './area-logada/home/home.component';
+import { LancamentosComponent } from './area-logada/lancamentos/lancamentos.component';
+import { PlanosContaComponent } from './area-logada/planos-conta/planos-conta.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { Erro404Component } from './erro404/erro404.component';
-import { HomeComponent } from './home/home.component';
-import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { LoginComponent } from './login/login.component';
-import { PlanosContaComponent } from './planos-conta/planos-conta.component';
 
 const routes: Routes = [{
-  path: 'home',
-  component: HomeComponent
-}, {
+  path: '',
+  component: AreaLogadaComponent,
+  children: [{
+    path: 'home',
+    component: HomeComponent
+  }, {
+    path: 'planos-conta',
+    component: PlanosContaComponent
+  }, {
+    path: 'lancamentos',
+    component: LancamentosComponent
+  }]
+},{
   path: 'cadastro',
   component: CadastroComponent
 }, {
   path: 'login',
   component: LoginComponent
-}, {
-  path: 'planos-conta',
-  component: PlanosContaComponent
-}, {
-  path: 'lancamentos',
-  component: LancamentosComponent
 }, {
   path: '',
   redirectTo: 'home',
