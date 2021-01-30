@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 import { MEMES_AGRUPADOS_POR_CATEGORIA } from './exercicio-diretivas.constants';
 
 @Component({
   selector: 'app-exercicio-diretivas',
   templateUrl: './exercicio-diretivas.component.html',
-  styleUrls: ['./exercicio-diretivas.component.scss']
+  styleUrls: ['./exercicio-diretivas.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class ExercicioDiretivasComponent {
 
@@ -18,7 +19,9 @@ export class ExercicioDiretivasComponent {
     'Abacaxi',
     'Laranja',
     'Melancia',
-  ]
+  ];
+
+  classeCSS = 'verde';
 
   trocarValor() {
     this.deveExibir = !this.deveExibir;
@@ -26,6 +29,21 @@ export class ExercicioDiretivasComponent {
 
   soma(numero1: number, numero2: number) {
     return numero1 + numero2;
+  }
+
+  trocarParaVermelho() {
+    this.classeCSS = 'vermelho';
+  }
+
+  trocarParaVerde() {
+    this.classeCSS = 'verde';
+  }
+
+  getClasseCSS() {
+    return {
+      'verde': true,
+      'fonte-grande': this.deveExibir
+    };
   }
 
 }

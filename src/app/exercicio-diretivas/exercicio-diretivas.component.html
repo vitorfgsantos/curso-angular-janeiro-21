@@ -32,7 +32,7 @@
 
 <!-- Exercício -->
 
-<ul>
+<!-- <ul>
   <li *ngFor="let memesAgrupados of MEMES_AGRUPADOS_POR_CATEGORIA">
     <h2> {{ memesAgrupados.categoria }} </h2>
 
@@ -45,4 +45,20 @@
     </div>
 
   </li>
-</ul>
+</ul> -->
+
+
+<!-- Diretivas de Atributo -->
+
+<button (click)="trocarParaVermelho()"> Trocar para vermelho </button>
+
+<button (click)="trocarParaVerde()"> Trocar para verde </button>
+
+<h2 [ngClass]="classeCSS"> Meu texto com ngClass </h2>
+<h2 [ngClass]="deveExibir ? 'verde' : 'vermelho'"> Meu segundo texto com ngClass </h2>
+
+<h2 [ngClass]="getClasseCSS()"> Meu terceiro texto com ngClass </h2>
+
+
+
+
