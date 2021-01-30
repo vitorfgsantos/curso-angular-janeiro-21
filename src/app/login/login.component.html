@@ -19,7 +19,17 @@
         Senha inválida.
       </div>
     </div>
-    <button type="submit" class="btn btn-primary mt-3" 
+
+    <p *ngIf="erroNoLogin">
+      Usuário ou senha inválidos.
+    </p>
+
+    <button type="submit" class="btn btn-primary mt-3" *ngIf="!estaCarregando; else spinner"
       (click)="onSubmit(form)">Entrar</button>
+
+    <ng-template #spinner>
+      <div class="spinner-border mt-4" role="status"></div>
+    </ng-template>
+    
   </form>  
 </div>
