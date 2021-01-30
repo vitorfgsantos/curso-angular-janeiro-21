@@ -56,5 +56,13 @@ export class AuthService {
     localStorage.clear();
   }
 
+  estaLogado() {
+    if (this.getUsuario() && this.getToken()) {
+      return true;
+    }
+
+    return false;
+  }
+
 
 }
