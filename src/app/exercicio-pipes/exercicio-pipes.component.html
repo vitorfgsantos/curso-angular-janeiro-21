@@ -1,6 +1,6 @@
 
 
-<h2> Valor monetário: {{ valorMonetario | currency:'BRL' }} </h2>
+<h2> Valor monetário: {{ valorMonetario | currency }} </h2>
 <h2> Data: {{ data | date:'dd \'de\' MMMM \'de\' yyyy' }}</h2>
 
 <!-- <h2> Título: {{ filme.titulo | lowercase }} </h2> -->
@@ -9,6 +9,26 @@
 <h2> Preço do aluguel: {{ filme.precoAluguel | currency:'BRL' }} </h2>
 <h2> Data de Lançamento: {{ filme.dataLancamento | date:'full' | uppercase }} </h2>
 
+<p> JSON Pipe: {{ filme | json }} </p>
 
 
-{{ filme | json }}
+<!-- Exercicio Pipes -->
+
+<h1> Exercício de Pipes </h1>
+
+<ul>
+  <li *ngFor="let compra of compras">
+    <p> Produto: <b>{{ compra.produto | uppercase }}</b> </p>
+    <p> Valor: {{ compra.valor | currency }} </p>
+    <p> Quantidade: {{ compra.quantidade }} </p>
+    <!-- <p> Peso: {{ compra.peso | number:'1.1-2' }} Kg </p> -->
+    <!-- <p> Peso: {{ compra.peso > 0 ? (compra.peso | number:'1.1-2')! + ' Kg' : 'sem peso' }} </p> -->
+    <p> Peso: {{ getPesoFormatado(compra.peso) }} </p>
+    <!-- <p> Data: {{ compra.data | date:'fullDate' }}, às {{ compra.data | date:'HH:mm'}} </p> -->
+    <!-- <p> Data: {{ compra.data | date:'EEEE, dd \'de\' MMMM \'de\' yyyy, \'às\' HH:mm' }} </p> -->
+    <p> Data: {{ compra.data | date:"EEEE, dd 'de' MMMM 'de' yyyy, 'às' HH:mm" }} </p>
+  </li>
+</ul>
+
+
+<br><br><br><br><br><br><br><br><br>
