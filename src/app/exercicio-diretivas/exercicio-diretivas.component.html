@@ -29,3 +29,20 @@
     {{ ultimo ? 'ESTE É O ÚLTIMO' : '' }}
   </li>
 </ul>
+
+<!-- Exercício -->
+
+<ul>
+  <li *ngFor="let memesAgrupados of MEMES_AGRUPADOS_POR_CATEGORIA">
+    <h2> {{ memesAgrupados.categoria }} </h2>
+
+    <div *ngFor="let meme of memesAgrupados.memes; let par = even">
+      <p> {{ meme.titulo }} </p>
+      <img [src]="IMAGEM_PREFIXO + meme.imagemURL" *ngIf="!par else blocoPar" width="200">
+      <ng-template #blocoPar>
+        ESTA IMAGEM É PAR!
+      </ng-template>
+    </div>
+
+  </li>
+</ul>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { MEMES_AGRUPADOS_POR_CATEGORIA } from './exercicio-diretivas.constants';
+
 @Component({
   selector: 'app-exercicio-diretivas',
   templateUrl: './exercicio-diretivas.component.html',
@@ -7,6 +9,9 @@ import { Component } from '@angular/core';
 })
 export class ExercicioDiretivasComponent {
 
+  MEMES_AGRUPADOS_POR_CATEGORIA = MEMES_AGRUPADOS_POR_CATEGORIA;
+  IMAGEM_PREFIXO = 'https://raw.githubusercontent.com/vitorfgsantos/angular-memes-diretivas/master/images';
+  
   deveExibir = true;
 
   frutas = [
