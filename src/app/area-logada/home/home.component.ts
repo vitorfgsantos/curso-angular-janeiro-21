@@ -1,9 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/shared/interfaces/usuario.interface';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  usuario: Usuario | undefined;
+  
+  constructor(
+    private authService: AuthService,
+  ) { }
+
+  ngOnInit() {
+    this.usuario = this.authService.getUsuario();
+  }
 }

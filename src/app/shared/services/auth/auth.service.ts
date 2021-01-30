@@ -7,8 +7,8 @@ import { Usuario } from '../../interfaces/usuario.interface';
 })
 export class AuthService {
 
-  usuario: Usuario | undefined;
-  token: string | undefined;
+  private usuario: Usuario | undefined;
+  private token: string | undefined;
 
   constructor() { }
 
@@ -48,6 +48,12 @@ export class AuthService {
     }
 
     return undefined;
+  }
+
+  logout() {
+    delete this.usuario;
+    delete this.token;
+    localStorage.clear();
   }
 
 
