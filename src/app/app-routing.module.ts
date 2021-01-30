@@ -13,6 +13,10 @@ const routes: Routes = [{
   path: '',
   component: AreaLogadaComponent,
   children: [{
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }, {
     path: 'home',
     component: HomeComponent
   }, {
@@ -22,16 +26,12 @@ const routes: Routes = [{
     path: 'lancamentos',
     component: LancamentosComponent
   }]
-},{
+}, {
   path: 'cadastro',
   component: CadastroComponent
 }, {
   path: 'login',
   component: LoginComponent
-}, {
-  path: '',
-  redirectTo: 'home',
-  pathMatch: 'full'
 }, {
   path: '**',
   component: Erro404Component
