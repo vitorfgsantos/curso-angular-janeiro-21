@@ -17,7 +17,7 @@ export class LoginComponent {
   senha: string = '';
 
   constructor(
-    private loginService: LoginService,
+    private loginService: LoginService
   ) { }
 
   onSubmit(form: NgForm) {
@@ -48,7 +48,11 @@ export class LoginComponent {
   }
 
   login() {
-    
+    const credenciais = {
+      usuario: this.usuario,
+      senha: this.senha
+    };
+    this.loginService.logar(credenciais)
   }
 
 }
