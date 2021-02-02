@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AreaLogadaComponent } from './area-logada.component';
-import { HomeComponent } from './home/home.component';
 import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { PlanosContaComponent } from './planos-conta/planos-conta.component';
 
@@ -15,7 +14,7 @@ const routes: Routes = [{
   component: AreaLogadaComponent,
   children: [{
     path: 'home',
-    component: HomeComponent
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
   }, {
     path: 'planos-conta',
     component: PlanosContaComponent
