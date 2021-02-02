@@ -1,21 +1,21 @@
 <div class="container pt-5 text-center">
 
   <h1> Seja bem-vindo ao Bankline!</h1>
-  <form class="form-signin" #form="ngForm">
+  <form class="form-signin" [formGroup]="loginForm">
     <div class="form-group mt-3">
       <input autocomplete="username" type="text" class="form-control" placeholder="Usuário"
-        [(ngModel)]="usuario" name="usuario" required
-        [class.is-invalid]="exibeErro('usuario',form)" #usuarioInput
+        formControlName="usuario"
+        [class.is-invalid]="exibeErro('usuario')" #usuarioInput
       >
-      <div *ngIf="exibeErro('usuario', form)" class="invalid-feedback">
+      <div *ngIf="exibeErro('usuario')" class="invalid-feedback">
         Usuário inválido.
       </div>
     </div>
     <div class="form-group mt-3">
       <input autocomplete="current-password" type="password" class="form-control" placeholder="Senha"
-        [(ngModel)]="senha" name="senha" required
-        [class.is-invalid]="exibeErro('senha',form)" #senhaInput>
-      <div *ngIf="exibeErro('senha', form)" class="invalid-feedback">
+        formControlName="senha"
+        [class.is-invalid]="exibeErro('senha')" #senhaInput>
+      <div *ngIf="exibeErro('senha')" class="invalid-feedback">
         Senha inválida.
       </div>
     </div>
@@ -25,7 +25,7 @@
     </p>
 
     <button type="submit" class="btn btn-primary mt-3" *ngIf="!estaCarregando; else spinner"
-      (click)="onSubmit(form)">Entrar</button>
+      (click)="onSubmit()">Entrar</button>
 
     <ng-template #spinner>
       <div class="spinner-border mt-4" role="status"></div>
