@@ -62,8 +62,10 @@
             <p> Sem lançamentos no período selecionado. </p>
           </ng-template>
 
-          <h5 class="card-title text-success"> Saldo total da conta: {{ dashboard!.contaBanco.saldo | currency }}</h5>
-          
+          <h5 class="card-title" [ngClass]="getTextSaldoCSS(dashboard!.contaBanco.saldo)">
+            Saldo total da conta: {{ dashboard!.contaBanco.saldo | currency }}
+          </h5>
+
         </div>
       </div>
     </div>
@@ -91,7 +93,9 @@
             </tbody>
           </table>
 
-          <h5 class="card-title" [ngClass]="getTextSaldoCSS(dashboard!.contaCredito.saldo)"> Saldo total da conta: {{ dashboard!.contaCredito.saldo | currency }}</h5>
+          <h5 class="card-title" [ngClass]="getTextSaldoCSS(dashboard!.contaCredito.saldo)">
+            Saldo total da conta: {{ dashboard!.contaCredito.saldo | currency }}
+          </h5>
           
         </div>
       </div>
